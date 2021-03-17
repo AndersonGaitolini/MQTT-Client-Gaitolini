@@ -45,12 +45,10 @@ type
     ActionList1: TActionList;
     actHome: TAction;
     actLayout: TAction;
-    actPower: TAction;
     lblTitle: TLabel;
-    actMenu: TAction;
     ImageList1: TImageList;
-    CardPanel1: TCardPanel;
-    Card1: TCard;
+    CardPanel_Main: TCardPanel;
+    Card_LayputOptions: TCard;
     pnlSettings: TPanel;
     lblLog: TLabel;
     lblVclStyle: TLabel;
@@ -81,10 +79,10 @@ type
     procedure trkAnimationStepChange(Sender: TObject);
     procedure actHomeExecute(Sender: TObject);
     procedure actLayoutExecute(Sender: TObject);
-    procedure actPowerExecute(Sender: TObject);
     procedure cbxVclStylesChange(Sender: TObject);
-    procedure actMenuExecute(Sender: TObject);
   private
+
+  protected
     procedure Log(const Msg: string);
   public
   end;
@@ -195,20 +193,6 @@ end;
 procedure TSplitViewFormPai.actLayoutExecute(Sender: TObject);
 begin
   Log(actLayout.Caption + ' Clicked');
-  if SV.Opened and chkCloseOnMenuClick.Checked then
-    SV.Close;
-end;
-
-procedure TSplitViewFormPai.actMenuExecute(Sender: TObject);
-begin
-  Log(actMenu.Caption + ' Clicked');
-  if SV.Opened and chkCloseOnMenuClick.Checked then
-    SV.Close;
-end;
-
-procedure TSplitViewFormPai.actPowerExecute(Sender: TObject);
-begin
-  Log(actPower.Caption + ' Clicked');
   if SV.Opened and chkCloseOnMenuClick.Checked then
     SV.Close;
 end;

@@ -89,12 +89,6 @@ object SplitViewFormPai: TSplitViewFormPai
             end
             item
               Action = actLayout
-            end
-            item
-              Action = actPower
-            end
-            item
-              Action = actMenu
             end>
         end>
       Font.Charset = DEFAULT_CHARSET
@@ -110,25 +104,25 @@ object SplitViewFormPai: TSplitViewFormPai
       OnCategoryCollapase = catMenuItemsCategoryCollapase
     end
   end
-  object CardPanel1: TCardPanel
+  object CardPanel_Main: TCardPanel
     Left = 200
     Top = 50
     Width = 471
     Height = 383
     Align = alClient
-    ActiveCard = Card1
-    Caption = 'CardPanel1'
+    ActiveCard = Card_LayputOptions
+    Caption = 'CardPanel_Main'
     TabOrder = 2
     ExplicitLeft = 206
     ExplicitTop = 92
     ExplicitWidth = 300
     ExplicitHeight = 200
-    object Card1: TCard
+    object Card_LayputOptions: TCard
       Left = 1
       Top = 1
       Width = 469
       Height = 381
-      Caption = 'Card1'
+      Caption = 'Card_LayputOptions'
       CardIndex = 0
       TabOrder = 0
       ExplicitLeft = 0
@@ -1366,16 +1360,6 @@ object SplitViewFormPai: TSplitViewFormPai
       Caption = 'Layout Options'
       ImageIndex = 2
       OnExecute = actLayoutExecute
-    end
-    object actMenu: TAction
-      Caption = 'Menu'
-      ImageIndex = 0
-      OnExecute = actMenuExecute
-    end
-    object actPower: TAction
-      Caption = 'Power Settings'
-      ImageIndex = 3
-      OnExecute = actPowerExecute
     end
   end
   object ImageList1: TImageList

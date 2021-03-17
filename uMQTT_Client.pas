@@ -11,7 +11,11 @@ uses
 
 type
   TSplitViewFormClient = class(TSplitViewFormPai)
-    procedure actPowerExecute(Sender: TObject);
+    Card2: TCard;
+    actBrokerSettings: TAction;
+    actClientSettings: TAction;
+    procedure actBrokerSettingsExecute(Sender: TObject);
+    procedure actMenuExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,10 +30,20 @@ implementation
 
 {$R *.dfm}
 
-procedure TSplitViewFormClient.actPowerExecute(Sender: TObject);
+procedure TSplitViewFormClient.actBrokerSettingsExecute(Sender: TObject);
 begin
   inherited;
-  //
+  Log(actBrokerSettings.Caption + ' Clicked');
+  if SV.Opened and chkCloseOnMenuClick.Checked then
+    SV.Close;
+end;
+
+procedure TSplitViewFormClient.actMenuExecute(Sender: TObject);
+begin
+  inherited;
+  Log(actClientSettings.Caption + ' Clicked');
+  if SV.Opened and chkCloseOnMenuClick.Checked then
+    SV.Close;
 end;
 
 end.
