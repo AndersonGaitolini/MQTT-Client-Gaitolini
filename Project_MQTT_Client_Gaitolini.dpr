@@ -2,10 +2,10 @@ program Project_MQTT_Client_Gaitolini;
 
 uses
   Vcl.Forms,
-  uSplitView in '..\..\Demos\Object Pascal\VCL\SplitView\uSplitView.pas' {SplitViewForm},
-  uMQTT_Client in 'uMQTT_Client.pas' {MQTT_Client},
+  uSplitViewDefault in 'inherited\uSplitViewDefault.pas' {SplitViewFormPai},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  uMQTT_Client in 'uMQTT_Client.pas' {SplitViewFormClient};
 
 {$R *.res}
 
@@ -13,7 +13,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'MQTT Client';
+  Application.CreateForm(TSplitViewFormClient, SplitViewFormClient);
   TStyleManager.TrySetStyle('Glow');
-  Application.CreateForm(TMQTT_Client, MQTT_Client);
   Application.Run;
 end.

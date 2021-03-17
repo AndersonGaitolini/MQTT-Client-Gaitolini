@@ -4,12 +4,14 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uSplitView, System.Actions,
-  Vcl.ActnList, System.ImageList, Vcl.ImgList, Vcl.CategoryButtons,
-  Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.Imaging.pngimage;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uSplitViewDefault, System.ImageList,
+  Vcl.ImgList, System.Actions, Vcl.ActnList, Vcl.CategoryButtons, Vcl.StdCtrls,
+  Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.WinXPanels, Vcl.WinXCtrls,
+  Vcl.Imaging.pngimage;
 
 type
-  TMQTT_Client = class(TSplitViewForm)
+  TSplitViewFormClient = class(TSplitViewFormPai)
+    procedure actPowerExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -17,10 +19,17 @@ type
   end;
 
 var
-  MQTT_Client: TMQTT_Client;
+  SplitViewFormClient: TSplitViewFormClient;
 
 implementation
 
+
 {$R *.dfm}
+
+procedure TSplitViewFormClient.actPowerExecute(Sender: TObject);
+begin
+  inherited;
+  //
+end;
 
 end.

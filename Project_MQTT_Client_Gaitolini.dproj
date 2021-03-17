@@ -101,12 +101,12 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\Demos\Object Pascal\VCL\SplitView\uSplitView.pas">
-            <Form>SplitViewForm</Form>
+        <DCCReference Include="inherited\uSplitViewDefault.pas">
+            <Form>SplitViewFormPai</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uMQTT_Client.pas">
-            <Form>MQTT_Client</Form>
+            <Form>SplitViewFormClient</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
